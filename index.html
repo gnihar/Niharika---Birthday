@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Niharika</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #f3e8ff, #e9d5ff, #fae8ff);
+      color: #2e1065;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      color: #9333ea;
+    }
+
+    .btn {
+      margin-top: 35px;
+      padding: 16px 34px;
+      border: none;
+      border-radius: 999px;
+      background: #7e22ce;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(126, 34, 206, 0.3);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #6b21a8;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .card p {
+      padding: 18px;
+      font-weight: 600;
+      color: #581c87;
+    }
+
+    .dark-section {
+      background: #3b0764;
+      color: white;
+    }
+
+    .funny-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .funny-box {
+      background: rgba(255,255,255,0.12);
+      border-radius: 25px;
+      padding: 28px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .love-list {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .love-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #faf5ff;
+      padding: 18px;
+      border-radius: 22px;
+      text-align: left;
+    }
+
+    .number {
+      min-width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #7e22ce;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 20px;
+      background: white;
+      color: #7e22ce;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -20px;
+      color: rgba(168, 85, 247, 0.35);
+      animation: floatUp linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    .final-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(46, 16, 101, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 999;
+      backdrop-filter: blur(8px);
+    }
+
+    .popup-content {
+      background: white;
+      padding: 50px;
+      border-radius: 35px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      animation: popup 0.5s ease;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .glass {
+        padding: 25px;
+      }
+
+      .card img {
+        height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgMusic" loop>
+    <source src="birthday-music.mp3" type="audio/mp3">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">
+    🎵 Play Music
+  </button>
+
+  <section>
+    <div class="container">
+      <div class="glass">
+        <h1>
+          Happy Birthday <br>
+          <span class="highlight">Niharika Sethia</span>
+        </h1>
+
+        <p>
+          Today is not just your birthday. It is a celebration of the love,
+          happiness, care, and beautiful energy you bring into our family.
+        </p>
+
+        <button class="btn" onclick="startSurprise()">
+          Start the Surprise ✨
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="message">
+    <div class="container">
+      <div class="glass">
+        <h2>From Your Whole Family 💜</h2>
+
+        <p>
+          Dear Niharika, you are one of the most special people in our lives.
+          Your smile lights up the family, your presence makes every gathering better,
+          and your love makes home feel warmer.
+          
+          We may not always say it loudly, but we are proud of you,
+          grateful for you, and incredibly lucky to have you.
+        </p>
+
+        <p style="margin-top:20px; font-weight:700; color:#7e22ce;">
+          You are deeply loved today and always.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Beautiful Memories 📸</h2>
+
+      <div class="gallery">
+
+        <div class="card">
+          <img src="photo1.jpg" alt="photo1">
+          <p>The smile that makes the whole family smile.</p>
+        </div>
+
+        <div class="card">
+          <img src="photo2.jpg" alt="photo2">
+          <p>Grace, happiness, and pure family energy.</p>
+        </div>
+
+        <div class="card">
+          <img src="photo3.jpg" alt="photo3">
+          <p>Beautiful then, beautiful now, beautiful always.</p>
+        </div>
+
+        <div class="card">
+          <img src="photo4.jpg" alt="photo4">
+          <p>Happiness looks exactly like this.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container">
+      <h2>Funny Truths About Niharika 😂</h2>
+
+      <div class="funny-grid">
+
+        <div class="funny-box">
+          Family drama feels incomplete without your expert commentary.
+        </div>
+
+        <div class="funny-box">
+          You are sweet and loving… until someone annoys you for 2 seconds.
+        </div>
+
+        <div class="funny-box">
+          You can turn a normal conversation into a full emotional Bollywood scene.
+        </div>
+
+        <div class="funny-box">
+          You don’t attend family functions. You become the vibe of the function.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="glass">
+
+        <h2>Things We Love About You ✨</h2>
+
+        <div class="love-list">
+
+          <div class="love-item">
+            <div class="number">1</div>
+            <div>You bring warmth and positivity everywhere you go.</div>
+          </div>
+
+          <div class="love-item">
+            <div class="number">2</div>
+            <div>You care deeply for everyone around you.</div>
+          </div>
+
+          <div class="love-item">
+            <div class="number">3</div>
+            <div>You make ordinary moments feel special.</div>
+          </div>
+
+          <div class="love-item">
+            <div class="number">4</div>
+            <div>You are emotional, funny, loving, and irreplaceable.</div>
+          </div>
+
+          <div class="love-item">
+            <div class="number">5</div>
+            <div>You are one of the biggest blessings of our family.</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="glass">
+
+        <h2>Our Birthday Wish 🎂</h2>
+
+        <p>
+          May this year bring you happiness, peace, laughter, success,
+          beautiful memories, and all the love you deserve.
+
+          Keep smiling, keep shining, and keep being the amazing person you are.
+        </p>
+
+        <p style="margin-top:25px; font-size:1.5rem; font-weight:800; color:#7e22ce;">
+          Happy Birthday Niharika Sethia 💜
+        </p>
+
+        <button class="btn" onclick="showFinalPopup()">
+          Final Surprise 🎉
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="final-popup" id="popup">
+    <div class="popup-content">
+      <h2>🎂 Happy Birthday Niharika 🎉</h2>
+
+      <p style="margin-top:20px;">
+        From all of us, with all our love.
+        Stay happy, stay blessed, and never stop being yourself.
+      </p>
+
+      <button class="btn" onclick="closePopup()">
+        Close 💜
+      </button>
+    </div>
+  </div>
+
+  <script>
+
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.querySelector('.music-btn');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicBtn.innerHTML = '⏸ Pause Music';
+      } else {
+        music.pause();
+        musicBtn.innerHTML = '🎵 Play Music';
+      }
+    }
+
+    function startSurprise() {
+      music.play();
+      musicBtn.innerHTML = '⏸ Pause Music';
+
+      document.getElementById('message').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    function showFinalPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.innerHTML = '💜';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (15 + Math.random() * 30) + 'px';
+      heart.style.animationDuration = (6 + Math.random() * 8) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+
+  </script>
+
+</body>
+</html>
